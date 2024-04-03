@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Channel {
+  email        String  @id
+  name         String
+  profileImage String
+  video        Video[]
+
+  @@map("channels")
+}
+
+model Video {
+  id         String   @id @default(uuid())
+  name       String
+  created_at DateTime @default(now())
+  videoUrl   String
+  coverImage String
+  views      Int      @default(0)
+
+  channelEmail String
+  uploader     Channel @relation(fields: [channelEmail], references: [email])
+
+  @@map("videos")
+}
