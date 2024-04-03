@@ -26,7 +26,7 @@ function VideoCard(prop: Response) {
           </p>
 
           <div className="text-gray text-xs">
-            <p title={name}>Coke Studio Bangla</p>
+            <p title={name}>{uploaderName}</p>
             <div className="flex items-center gap-[5px]">
               <p>{'1.5 M views'}</p>
               <div className="size-[5px] rounded-full bg-gray"></div>
