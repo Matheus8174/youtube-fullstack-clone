@@ -9,8 +9,6 @@ import getVideos from './services/getVideos';
 async function Home() {
   const response = await getVideos();
 
-  console.log(response[0]);
-
   return (
     <main className="flex">
       <Sidebar />

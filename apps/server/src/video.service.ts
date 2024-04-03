@@ -15,8 +15,6 @@ class VideoService {
       }
     });
 
-    console.log('SERVERS: ', allVideos);
-
     return allVideos;
   }
 }
